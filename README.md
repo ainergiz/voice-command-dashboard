@@ -114,31 +114,6 @@ Open `http://localhost:5173`.
 - **Frontend:** React 19 + Vite 7 + AudioWorklet
 - **Language:** TypeScript (strict)
 
-## Project Structure
-
-```
-src/
-  index.ts                        # Worker entrypoint + Hono routes
-  config.ts                       # Env parsing + provider config
-  agents/
-    session-agent.ts              # Core Durable Object: audio → STT → LLM → dashboard
-    session-agent-sql.ts          # SQLite schema + queries
-  services/
-    task-extractor.ts             # Two-tier LLM extraction engine
-    sentence-detector.ts          # Sentence boundary detection
-  providers/
-    llm.ts                        # LLM provider abstraction + tool-call support
-    stt.ts                        # Mistral Voxtral STT integration
-  types/
-    session.ts                    # State types + WebSocket message contracts
-  dashboard/
-    App.tsx                       # Main layout: transcript + intelligence board
-    hooks/useSessionAgent.ts      # WebSocket client
-    hooks/useAudioCapture.ts      # Mic + demo audio capture via AudioWorklet
-    components/                   # UI components
-    styles/global.css
-```
-
 ## Deep Analysis
 
 The deep analysis engine uses a tool-calling loop for structured edits:
