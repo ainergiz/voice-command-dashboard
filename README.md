@@ -1,5 +1,10 @@
 # Voice Command Dashboard
 
+
+https://github.com/user-attachments/assets/2775c3e3-d8a1-4037-b458-2c9948fe3581
+
+
+
 Real-time meeting intelligence dashboard that listens to conversations and extracts structured artifacts — decisions, action items, risks, dependencies, entities, and more.
 
 **Try the demo:** Click "Play Demo" to hear a sample meeting and watch the system extract insights in real time.
