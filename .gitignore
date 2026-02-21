@@ -1,0 +1,35 @@
+# Environment & secrets
+.dev.vars
+.env
+.env*.local
+
+# Build artifacts
+dist/
+
+# Dependencies
+node_modules/
+
+# Wrangler
+.wrangler/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Scripts (contain generation logic, not needed for deployment)
+scripts/
+
+# Demo intermediate clips
+src/dashboard/public/demo-clips/
+
+# Context / handoff artifacts
+.context/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo

@@ -1,0 +1,39 @@
+name = "voice-command-dashboard"
+main = "src/index.ts"
+compatibility_date = "2025-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "dist/assets"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+[observability]
+enabled = true
+
+[durable_objects]
+bindings = [
+  { name = "SessionAgent", class_name = "SessionAgent" },
+]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["SessionAgent"]
+
+# Workers AI binding — needed when LLM_PROVIDER = "workers-ai"
+[ai]
+binding = "AI"
+remote = true
+
+[vars]
+LLM_PROVIDER = "gemini"
+LLM_FAST_MODEL = "gemini-3-flash-preview"
+LLM_DEEP_MODEL = "gemini-3-flash-preview"
+STT_PROVIDER = "mistral"
+STT_MODEL = "voxtral-mini-transcribe-realtime-2602"
+STT_DELAY_MS = "480"
+
+# --- To switch to Workers AI, change the vars above to: ---
+# LLM_PROVIDER = "workers-ai"
+# LLM_FAST_MODEL = "@cf/zai-org/glm-4.7-flash"
+# LLM_DEEP_MODEL = "@cf/qwen/qwen3-30b-a3b-fp8"
